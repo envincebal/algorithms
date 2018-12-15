@@ -1,7 +1,16 @@
 /* Reverse the provided string. */
 
 function reverseString(str) {
-  return str;
+  const stringArr = [...str];
+  const reverseString = [];
+
+  for(let i = stringArr.length - 1; i >= 0; i--){
+    reverseString.push(stringArr[i]);
+  }
+
+  return reverseString.join("");
 }
 
-creverseString("hello");
+let a = reverseString("hello world");
+
+console.log(a);

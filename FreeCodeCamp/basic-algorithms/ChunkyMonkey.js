@@ -5,7 +5,7 @@ function chunkArrayInGroups(arr, size) {
 
   while(arr.length){
     newArr.push(arr.slice(0, size));
-    arr.splice(0, size); 
+    arr.splice(0, size);
   }
   return newArr;
 }

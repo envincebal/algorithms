@@ -4,10 +4,25 @@
 // in the same quantity. Only consider characters, not spaces
 // or punctuation.  Consider capital letters to be the same as lower case
 // --- Examples
-//   anagrams('rail safety', 'fairy tales') --> True
-//   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
-//   anagrams('Hi there', 'Bye there') --> False
+//   anagrams("rail safety", "fairy tales") --> True
+//   anagrams("RAIL! SAFETY!", "fairy tales") --> True
+//   anagrams("Hi there", "Bye there") --> False
 
-function anagrams(stringA, stringB) {}
+function anagrams(stringA, stringB) {
+  return cleanString(stringA) === cleanString(stringB);
+}
+
+function cleanString(str){
+  return str.replace(/[^\w]/g, "").toLowerCase().split("").sort().join();
+}
+
+// Test cases
+let a = anagrams("rail safety", "fairy tales");
+let b = anagrams("RAIL! SAFETY!", "fairy tales");
+let c = anagrams("Hi there", "Bye there");
+
+console.log(a);
+console.log(b);
+console.log(c);
 
 module.exports = anagrams;
